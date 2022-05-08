@@ -13,4 +13,6 @@
 >4. Reset CSS Normalize
 >5. React Router DOM
 >5. Classnames
->6. Fortawesome
+>6. Fontawesome
+>7. Babel
+>8. Tippyjs React
