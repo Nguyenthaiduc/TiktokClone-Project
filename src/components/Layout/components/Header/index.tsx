@@ -34,6 +34,7 @@ const Header: React.FC = () => {
                       <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} />
                     </button>
                 </div>
+                <div className={cx('actions')}></div>
             </div>
         </header>
     );
