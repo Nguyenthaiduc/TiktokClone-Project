@@ -7,7 +7,7 @@ const cx = classNames.bind(styles)
 const Sidebar : React.FC = () => {
   return (
     <aside className={cx('wrapper')}>
-      <h2>Side bar</h2>
+      <h2>Sidebar</h2>
     </aside>
   )
 }
