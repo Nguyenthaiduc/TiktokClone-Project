@@ -6,7 +6,7 @@ interface PropTypes {
     children?: React.ReactNode;
 }
 
-const DefaultLayout: React.FC<PropTypes> = ({ children }) => {
+const HeaderOnly: React.FC<PropTypes> = ({ children }) => {
     return (
         <div>
             <Header />
@@ -18,4 +18,4 @@ const DefaultLayout: React.FC<PropTypes> = ({ children }) => {
     );
 };
 
-export default DefaultLayout;
+export default HeaderOnly;

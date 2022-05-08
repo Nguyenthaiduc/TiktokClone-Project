@@ -1,0 +1,18 @@
+.wrapper {
+    display: flex;
+    flex-direction: column; /* theo chieu doc */
+    align-items: center;
+
+}
+
+.container {
+    width: var(--default-layout-width);
+    display: flex;
+   
+}
+.content {
+   flex: 1;
+ 
+
+}   
+

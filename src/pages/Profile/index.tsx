@@ -2,7 +2,7 @@ import React from 'react'
 
 const Profile : React.FC = () => {
   return (
-    <div>Profile</div>
+    <h2>Profile</h2>
   )
 }
 
