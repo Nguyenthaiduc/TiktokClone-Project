@@ -13,9 +13,13 @@ interface PropTypes {
     small?: string | boolean;
     large?: string | boolean;
     text?: string | boolean;
+    rounded?: string | boolean;
     disabled?: string | boolean;
-    onClick?: any;
     children?: React.ReactNode;
+    onClick?: any;
+    className?: string | boolean | symbol | any;
+    leftIcon?: React.ReactElement;
+    rightIcon?: React.ReactElement;
 }
 type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string;
 
@@ -27,9 +31,13 @@ const Button: React.FC<PropTypes> = ({
     small = false,
     large = false,
     text = false,
+    rounded = false,
     disabled = false,
     onClick,
     children,
+    className,
+    leftIcon,
+    rightIcon,
     ...passProps
 }) => {
     let Comp: CompoType = 'button';
@@ -42,7 +50,7 @@ const Button: React.FC<PropTypes> = ({
                 delete props[key]
             }
         })
-        delete props.onClick
+        
     }
 
     if (to) {
@@ -54,17 +62,21 @@ const Button: React.FC<PropTypes> = ({
     }
 
     const classes = cx('wrapper', {
+        [className] : className,
         primary,
         outline,
         text,
-        disabled, 
+        disabled,
+        rounded, 
         small,
         large,
     });
 
     return (
         <Comp className={classes} {...props}>
-            <span>{children}</span>
+            {leftIcon && <span className={cx('icon')}>{leftIcon}</span>}
+            <span className={cx('title')}>{children}</span>
+            {rightIcon && <span className={cx('icon')}>{rightIcon}</span>}
         </Comp>
     );
 };

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import className from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Tippy from '@tippyjs/react';
 
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
                     <Button 
                         to="" 
                         primary
-                        disabled
+                        leftIcon={<FontAwesomeIcon icon={faSignIn as IconProp} />}
                         // onClick={()=>alert('Clicked')}
                         >Login</Button>
                        
