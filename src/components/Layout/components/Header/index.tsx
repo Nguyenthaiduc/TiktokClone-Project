@@ -5,6 +5,7 @@ import { faCircleXmark, faMagnifyingGlass, faSpinner } from '@fortawesome/free-s
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import Tippy from '@tippyjs/react';
 
+import Button from '../../../../components/Button'
 import { images } from '../../../../assets/images';
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '../../../Popper';
@@ -64,7 +65,21 @@ const Header: React.FC = () => {
                         </button>
                     </div>
                 </Tippy>
-                <div className={cx('actions')}></div>
+                <div className={cx('actions')}>
+                    {/* Right Header */} 
+                    <Button 
+                        to="" 
+                        text
+                        // onClick={()=>alert('Clicked')}
+                        >Upload</Button>
+                    <Button 
+                        to="" 
+                        primary
+                        disabled
+                        // onClick={()=>alert('Clicked')}
+                        >Login</Button>
+                       
+                </div>
             </div>
         </header>
     );

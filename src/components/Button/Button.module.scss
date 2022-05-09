@@ -1,0 +1,60 @@
+.wrapper {
+    min-width: 100px;
+    padding: 9px 16px;
+    border-radius:4px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: var(--white);
+    border: 1px solid transparent;
+    user-select: none; /*khong chọn duoc text */
+
+    + .wrapper{
+        margin-left:8px; /* Tạo khoảng cách giữa các nút*/
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+    }
+    }
+}
+// Button Types
+.primary {
+    color: var(--white);
+    background-color: var(--primary);
+
+    &:hover{
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)),#FE2C55;
+    }
+
+}
+
+.outline {
+    color:var(--primary);
+    border-color: currentColor;
+
+    &:hover{
+        background-color: rgba(254,44,85,0.06);
+    }
+}
+
+.text {
+    &:hover{
+        text-decoration:underline;
+    }
+}
+
+//Disabled
+
+//Button Sizes
+
+.small {
+    min-width: 88px;
+    padding:4px 16px ;
+}
+
+.large {
+    min-width: 140px;
+    padding: 14px 16px;
+
+}
