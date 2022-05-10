@@ -6,7 +6,7 @@ import { Link, LinkProps } from 'react-router-dom';
 const cx = classNames.bind(styles);
 
 interface PropTypes {
-    to: string;
+    to?: string;
     href?: string;
     primary?: string | boolean;
     outline?: string | boolean;
@@ -21,7 +21,7 @@ interface PropTypes {
     leftIcon?: React.ReactElement;
     rightIcon?: React.ReactElement;
 }
-type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string;
+type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string | any
 
 const Button: React.FC<PropTypes> = ({
     to,

@@ -3,15 +3,33 @@ import className from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import Tippy from '@tippyjs/react';
+import Tippy from '@tippyjs/react/headless';
 
 import Button from '../../../../components/Button'
 import { images } from '../../../../assets/images';
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
+import Menu from '../../../Popper/Menu';
 
 const cx = className.bind(styles);
+
+const MENU_ITEMS = [
+    {
+        icon: <img src={images.language} />,
+        title: 'English',
+    },
+    {
+        icon: <img src={images.feedback} />,
+        title: 'Feedback and Help',
+        to:'/feedback'
+    },
+    {
+        icon: <img src={images.keyboard} />,
+        title: 'Keyboard shortcuts',
+        
+    }
+]
 
 const Header: React.FC = () => {
     // State
@@ -66,18 +84,28 @@ const Header: React.FC = () => {
                     </div>
                 </Tippy>
                 <div className={cx('actions')}>
-                    {/* Right Header */} 
+                    {/* RIGHT HEADER */} 
                     <Button 
                         to="" 
                         text
                         // onClick={()=>alert('Clicked')}
-                        >Upload</Button>
+                        >Upload
+                    </Button>
                     <Button 
                         to="" 
                         primary
                         leftIcon={<FontAwesomeIcon icon={faSignIn as IconProp} />}
                         // onClick={()=>alert('Clicked')}
-                        >Login</Button>
+                        >Login
+                    </Button>
+
+                        {/* Elipsis */}
+                    <Menu items={MENU_ITEMS}>
+                        <button className={cx('more-btn')}>
+                            <img src = {images.elipsis} />
+                        </button>
+                    </Menu>
+                  
                        
                 </div>
             </div>

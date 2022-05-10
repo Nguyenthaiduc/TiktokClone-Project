@@ -16,3 +16,10 @@
 >6. Fontawesome
 >7. Babel
 >8. Tippyjs React
+
+# Debugger
+```js
+setTimeout(()=> {
+    debugger
+},3000)
+```
