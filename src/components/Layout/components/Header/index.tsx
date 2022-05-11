@@ -10,7 +10,8 @@ import { images } from '../../../../assets/images';
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
-import Menu from '../../../Popper/Menu';
+import Menu, { MenuItems } from '../../../Popper/Menu';
+
 
 const cx = className.bind(styles);
 
@@ -18,6 +19,21 @@ const MENU_ITEMS = [
     {
         icon: <img src={images.language} />,
         title: 'English',
+        children:{
+            title: 'Language',
+            data: [
+                {
+                    type: 'language',
+                    code: 'en',
+                    title: 'English'
+                },
+                {
+                    type: 'language',
+                    code: 'vi',
+                    title: 'Tiếng Việt'
+                }
+            ]
+        }
     },
     {
         icon: <img src={images.feedback} />,
@@ -41,6 +57,16 @@ const Header: React.FC = () => {
             setSearchResult([1, 2, 3]);
         }, 0);
     }, []);
+
+    //handle
+    const handleMenuChange = (menuItem : MenuItems) => {
+       switch (menuItem.type){
+           case 'language':
+               //handle change language
+               break;
+            default:
+       }
+    }
 
     return (
         <header className={cx('wrapper')}>
@@ -100,7 +126,7 @@ const Header: React.FC = () => {
                     </Button>
 
                         {/* Elipsis */}
-                    <Menu items={MENU_ITEMS}>
+                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
                         <button className={cx('more-btn')}>
                             <img src = {images.elipsis} />
                         </button>
@@ -112,5 +138,6 @@ const Header: React.FC = () => {
         </header>
     );
 };
+
 
 export default Header;

@@ -19,6 +19,7 @@ const AccountItem: React.FC = () => {
                 <h4 className={cx('name')}>
                     <span>Nguyen Thi Le Hoa</span>
                     <FontAwesomeIcon className={cx('check')} icon={faCheckCircle as IconProp} />
+                    
                 </h4>
                 <span className={cx('username')}>nguyenthilehoa</span>
             </div>

@@ -11,16 +11,21 @@ interface PropTypes {
     data: {
         icon: React.ReactElement;
         title: string;
+        type?:string;
         to?: string | undefined;
-    }
+    },
+    onClick : () => void
 }
 
-const MenuItem : React.FC<PropTypes> = ({data}) => {
+const MenuItem : React.FC<PropTypes> = ({data,onClick}) => {
   return (
    <Button 
    leftIcon={data.icon}
    to={data.to}
    className = {cx('menu-item')}
+   onClick = {onClick}
+
+
    >
        {data.title}
        </Button>
