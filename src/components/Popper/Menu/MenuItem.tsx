@@ -13,16 +13,20 @@ interface PropTypes {
         title: string;
         type?:string;
         to?: string | undefined;
+        separate?: boolean | undefined;
     },
     onClick : () => void
 }
 
 const MenuItem : React.FC<PropTypes> = ({data,onClick}) => {
+    const classes = cx('menu-item',{
+        separate: data.separate,
+    })
   return (
    <Button 
    leftIcon={data.icon}
    to={data.to}
-   className = {cx('menu-item')}
+   className = {cx(classes)}
    onClick = {onClick}
 
 

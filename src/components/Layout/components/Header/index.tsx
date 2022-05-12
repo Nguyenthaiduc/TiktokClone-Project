@@ -3,7 +3,9 @@ import className from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import Tippy from '@tippyjs/react/headless';
+import Tippy from '@tippyjs/react'
+import HeadlessTipply from '@tippyjs/react/headless';
+import 'tippy.js/dist/tippy.css'; // optional
 
 import Button from '../../../../components/Button'
 import { images } from '../../../../assets/images';
@@ -51,6 +53,8 @@ const Header: React.FC = () => {
     // State
     const [searchResult, setSearchResult] = useState<Array<string | number>>([]);
 
+    const currentUser = true
+
     //useEffect
     useEffect(() => {
         setTimeout(() => {
@@ -68,6 +72,31 @@ const Header: React.FC = () => {
        }
     }
 
+   const userMenu = [
+    {
+        icon: <img src={images.user} />,
+        title: 'View Profile',
+        to:'/@hoaa'
+    },
+    {
+        icon: <img src={images.coin} />,
+        title: 'Get coins',
+        to:'/coin'
+    },
+    {
+        icon: <img src={images.setting} />,
+        title: 'Settings',
+        to:'/settings'
+    },
+    ...MENU_ITEMS,
+    {
+        icon: <img src={images.logout} />,
+        title: 'Log out',
+        to:'/logout',
+        separate: true,
+    },
+   ]
+
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -77,7 +106,7 @@ const Header: React.FC = () => {
                 </div>
                 {/* Search */}
                 {/* Hover vào sẽ hiện ra text */}
-                <Tippy
+                <HeadlessTipply
                     interactive
                     visible={searchResult.length > 0}
                     render={(attrs) => (
@@ -108,8 +137,25 @@ const Header: React.FC = () => {
                             <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} />
                         </button>
                     </div>
-                </Tippy>
+                </HeadlessTipply>
+                {/* Check User */}
                 <div className={cx('actions')}>
+                {currentUser ? (
+                    <>
+                    <Tippy delay={[0,200]} content="Upload Video" placement='bottom'>
+                        <button className={cx('action-btn')}>
+                            <img src = {images.upload} />
+                        </button>
+                    </Tippy>
+                    <button className={cx('action-btn')}>
+                        <img src = {images.message} />
+                    </button>
+                    <button className={cx('action-btn')}>
+                        <img src = {images.inbox} />
+                    </button>
+                    </>
+                ) : (
+                    <>
                     {/* RIGHT HEADER */} 
                     <Button 
                         to="" 
@@ -125,15 +171,25 @@ const Header: React.FC = () => {
                         >Login
                     </Button>
 
-                        {/* Elipsis */}
-                    <Menu items={MENU_ITEMS} onChange={handleMenuChange}>
+                   
+                    </>
+                       
+                )}
+                     {/* Elipsis */}
+                     <Menu items={currentUser? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                     {currentUser ? (
+                         <img 
+                         className={cx('user-avatar')} 
+                         src = "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1652191200&x-signature=AvpOtLJwNv4XtKGB8zX5M2HHeBI%3D" 
+                         alt="" />
+                     ) : (
                         <button className={cx('more-btn')}>
                             <img src = {images.elipsis} />
                         </button>
+                     )}
                     </Menu>
-                  
-                       
                 </div>
+
             </div>
         </header>
     );
