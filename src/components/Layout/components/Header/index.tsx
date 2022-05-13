@@ -13,6 +13,8 @@ import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
 import Menu, { MenuItems } from '../../../Popper/Menu';
+import { UploadIcon } from '../../../Icons';
+import Image from '../../../Image';
 
 
 const cx = className.bind(styles);
@@ -134,7 +136,8 @@ const Header: React.FC = () => {
 
                         <button className={cx('search-btn')}>
                             {/* Search */}
-                            <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} />
+                            {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
+                            <img src = {images.search} />
                         </button>
                     </div>
                 </HeadlessTipply>
@@ -144,7 +147,7 @@ const Header: React.FC = () => {
                     <>
                     <Tippy delay={[0,200]} content="Upload Video" placement='bottom'>
                         <button className={cx('action-btn')}>
-                            <img src = {images.upload} />
+                            <UploadIcon />
                         </button>
                     </Tippy>
                     <button className={cx('action-btn')}>
@@ -178,10 +181,12 @@ const Header: React.FC = () => {
                      {/* Elipsis */}
                      <Menu items={currentUser? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
                      {currentUser ? (
-                         <img 
+                         <Image 
                          className={cx('user-avatar')} 
                          src = "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1652191200&x-signature=AvpOtLJwNv4XtKGB8zX5M2HHeBI%3D" 
-                         alt="" />
+                         alt="" 
+                         fallback="https://avatars.githubusercontent.com/u/73944631?v=4"
+                         />
                      ) : (
                         <button className={cx('more-btn')}>
                             <img src = {images.elipsis} />

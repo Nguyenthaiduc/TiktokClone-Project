@@ -9,7 +9,7 @@ const cx = classNames.bind(styles)
 
 interface PropTypes {
     title?: string
-    onBack?: any
+    onBack?: () => void
 }
 
 const Header:React.FC<PropTypes> = ({title, onBack}) => {

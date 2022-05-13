@@ -13,6 +13,7 @@ import user from './user.svg'
 import coin from './coin.svg'
 import setting from './setting.svg'
 import logout from './logout.svg'
+import noImage from './no-image.png'
 export const images = {
     logo,
     check,
@@ -29,4 +30,5 @@ export const images = {
     coin,
     setting,
     logout,
+    noImage,
 };

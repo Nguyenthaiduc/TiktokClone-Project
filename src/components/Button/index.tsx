@@ -16,7 +16,7 @@ interface PropTypes {
     rounded?: string | boolean;
     disabled?: string | boolean;
     children?: React.ReactNode;
-    onClick?: any;
+    onClick?: () => void
     className?: string | boolean | symbol | any;
     leftIcon?: React.ReactElement;
     rightIcon?: React.ReactElement;

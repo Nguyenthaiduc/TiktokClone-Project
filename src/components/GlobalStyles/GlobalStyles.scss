@@ -14,6 +14,27 @@
     
     
 }
+//Font Embeded
+@font-face {
+    font-family: ProximaNova;
+    src: url('/src/assets/fonts/Proxima-Nova-Bold.woff');
+    font-weight: 700;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/src/assets/fonts/ProximaNova-Semibold.woff2');
+    font-weight: 600;
+}
+@font-face {
+    font-family: ProximaNova;
+    src: url('/src/assets/fonts/Proxima-Nova-Regular.woff2');
+    font-weight: 400;
+}
+@font-face {
+    font-family: SofiaPro;
+    src: url('/src/assets/fonts/sofiapro-bold.woff');
+    font-weight: 700;
+}
 
 html {
     font-size: 62.5%;
