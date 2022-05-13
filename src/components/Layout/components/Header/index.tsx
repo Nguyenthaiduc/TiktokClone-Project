@@ -3,19 +3,30 @@ import className from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import Tippy from '@tippyjs/react'
+import Tippy from '@tippyjs/react';
 import HeadlessTipply from '@tippyjs/react/headless';
 import 'tippy.js/dist/tippy.css'; // optional
 
-import Button from '../../../../components/Button'
+import Button from '../../../../components/Button';
 import { images } from '../../../../assets/images';
 import styles from './Header.module.scss';
 import { Wrapper as PopperWrapper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
 import Menu, { MenuItems } from '../../../Popper/Menu';
-import { UploadIcon } from '../../../Icons';
+import {
+    CoinIcon,
+    FeedbackIcon,
+    InboxIcon,
+    KeyboardIcon,
+    LanguageIcon,
+    LogoutIcon,
+    MessageIcon,
+    SearchIcon,
+    SettingIcon,
+    UploadIcon,
+    UserIcon,
+} from '../../../Icons';
 import Image from '../../../Image';
-
 
 const cx = className.bind(styles);
 
@@ -23,39 +34,38 @@ const MENU_ITEMS = [
     {
         icon: <img src={images.language} />,
         title: 'English',
-        children:{
+        children: {
             title: 'Language',
             data: [
                 {
                     type: 'language',
                     code: 'en',
-                    title: 'English'
+                    title: 'English',
                 },
                 {
                     type: 'language',
                     code: 'vi',
-                    title: 'Tiếng Việt'
-                }
-            ]
-        }
+                    title: 'Tiếng Việt',
+                },
+            ],
+        },
     },
     {
-        icon: <img src={images.feedback} />,
+        icon: <FeedbackIcon />,
         title: 'Feedback and Help',
-        to:'/feedback'
+        to: '/feedback',
     },
     {
-        icon: <img src={images.keyboard} />,
+        icon: <KeyboardIcon />,
         title: 'Keyboard shortcuts',
-        
-    }
-]
+    },
+];
 
 const Header: React.FC = () => {
     // State
     const [searchResult, setSearchResult] = useState<Array<string | number>>([]);
 
-    const currentUser = true
+    const currentUser = true;
 
     //useEffect
     useEffect(() => {
@@ -65,39 +75,39 @@ const Header: React.FC = () => {
     }, []);
 
     //handle
-    const handleMenuChange = (menuItem : MenuItems) => {
-       switch (menuItem.type){
-           case 'language':
-               //handle change language
-               break;
+    const handleMenuChange = (menuItem: MenuItems) => {
+        switch (menuItem.type) {
+            case 'language':
+                //handle change language
+                break;
             default:
-       }
-    }
+        }
+    };
 
-   const userMenu = [
-    {
-        icon: <img src={images.user} />,
-        title: 'View Profile',
-        to:'/@hoaa'
-    },
-    {
-        icon: <img src={images.coin} />,
-        title: 'Get coins',
-        to:'/coin'
-    },
-    {
-        icon: <img src={images.setting} />,
-        title: 'Settings',
-        to:'/settings'
-    },
-    ...MENU_ITEMS,
-    {
-        icon: <img src={images.logout} />,
-        title: 'Log out',
-        to:'/logout',
-        separate: true,
-    },
-   ]
+    const userMenu = [
+        {
+            icon: <UserIcon />,
+            title: 'View Profile',
+            to: '/@hoaa',
+        },
+        {
+            icon: <CoinIcon />,
+            title: 'Get coins',
+            to: '/coin',
+        },
+        {
+            icon: <SettingIcon />,
+            title: 'Settings',
+            to: '/settings',
+        },
+        ...MENU_ITEMS,
+        {
+            icon: <LogoutIcon />,
+            title: 'Log out',
+            to: '/logout',
+            separate: true,
+        },
+    ];
 
     return (
         <header className={cx('wrapper')}>
@@ -114,9 +124,7 @@ const Header: React.FC = () => {
                     render={(attrs) => (
                         <div className={cx('search-result')} tabIndex={-1} {...attrs}>
                             <PopperWrapper>
-                                <h4 className={cx('search-title')}>
-                                    Accounts
-                                </h4>
+                                <h4 className={cx('search-title')}>Accounts</h4>
                                 <AccountItem />
                                 <AccountItem />
                                 <AccountItem />
@@ -137,68 +145,68 @@ const Header: React.FC = () => {
                         <button className={cx('search-btn')}>
                             {/* Search */}
                             {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
-                            <img src = {images.search} />
+                            {/* <img src = {images.search} /> */}
+                            <SearchIcon />
                         </button>
                     </div>
                 </HeadlessTipply>
                 {/* Check User */}
                 <div className={cx('actions')}>
-                {currentUser ? (
-                    <>
-                    <Tippy delay={[0,200]} content="Upload Video" placement='bottom'>
-                        <button className={cx('action-btn')}>
-                            <UploadIcon />
-                        </button>
-                    </Tippy>
-                    <button className={cx('action-btn')}>
-                        <img src = {images.message} />
-                    </button>
-                    <button className={cx('action-btn')}>
-                        <img src = {images.inbox} />
-                    </button>
-                    </>
-                ) : (
-                    <>
-                    {/* RIGHT HEADER */} 
-                    <Button 
-                        to="" 
-                        text
-                        // onClick={()=>alert('Clicked')}
-                        >Upload
-                    </Button>
-                    <Button 
-                        to="" 
-                        primary
-                        leftIcon={<FontAwesomeIcon icon={faSignIn as IconProp} />}
-                        // onClick={()=>alert('Clicked')}
-                        >Login
-                    </Button>
-
-                   
-                    </>
-                       
-                )}
-                     {/* Elipsis */}
-                     <Menu items={currentUser? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
-                     {currentUser ? (
-                         <Image 
-                         className={cx('user-avatar')} 
-                         src = "https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1652191200&x-signature=AvpOtLJwNv4XtKGB8zX5M2HHeBI%3D" 
-                         alt="" 
-                         fallback="https://avatars.githubusercontent.com/u/73944631?v=4"
-                         />
-                     ) : (
-                        <button className={cx('more-btn')}>
-                            <img src = {images.elipsis} />
-                        </button>
-                     )}
+                    {currentUser ? (
+                        <>
+                            <Tippy delay={[0, 200]} content="Upload Video" placement="bottom">
+                                <button className={cx('action-btn')}>
+                                    <UploadIcon />
+                                </button>
+                            </Tippy>
+                            <button className={cx('action-btn')}>
+                                {/* <img src = {images.message} /> */}
+                                <MessageIcon />
+                            </button>
+                            <button className={cx('action-btn')}>
+                                {/* <img src = {images.inbox} /> */}
+                                <InboxIcon />
+                            </button>
+                        </>
+                    ) : (
+                        <>
+                            {/* RIGHT HEADER */}
+                            <Button
+                                to=""
+                                text
+                                // onClick={()=>alert('Clicked')}
+                            >
+                                Upload
+                            </Button>
+                            <Button
+                                to=""
+                                primary
+                                leftIcon={<FontAwesomeIcon icon={faSignIn as IconProp} />}
+                                // onClick={()=>alert('Clicked')}
+                            >
+                                Login
+                            </Button>
+                        </>
+                    )}
+                    {/* Elipsis */}
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS} onChange={handleMenuChange}>
+                        {currentUser ? (
+                            <Image
+                                className={cx('user-avatar')}
+                                src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/ea0854578085ab26effc2c7b8cefa270~c5_100x100.jpeg?x-expires=1652191200&x-signature=AvpOtLJwNv4XtKGB8zX5M2HHeBI%3D"
+                                alt=""
+                                fallback="https://avatars.githubusercontent.com/u/73944631?v=4"
+                            />
+                        ) : (
+                            <button className={cx('more-btn')}>
+                                <img src={images.elipsis} />
+                            </button>
+                        )}
                     </Menu>
                 </div>
-
             </div>
         </header>
     );
 };
-
 
 export default Header;
