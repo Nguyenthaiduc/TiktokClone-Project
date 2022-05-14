@@ -35,7 +35,7 @@ const defaultFn = () => {};
 
 const Menu: React.FC<PropTypes> = ({ children, items = [], onChange = defaultFn }) => {
     //state
-    const [history, setHistory] = useState([{ data: items }]);
+    const [history, setHistory] = useState([{ data: items } ]);
     const current = history[history.length - 1];
 
     const renderItems = () => {

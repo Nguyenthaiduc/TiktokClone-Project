@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from 'react';
-import className from 'classnames/bind';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleXmark, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { faSignIn } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Search from '../Search'
 import Tippy from '@tippyjs/react';
-import HeadlessTipply from '@tippyjs/react/headless';
+import className from 'classnames/bind';
+import React, { useEffect, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
-
-import Button from '../../../../components/Button';
 import { images } from '../../../../assets/images';
-import styles from './Header.module.scss';
-import { Wrapper as PopperWrapper } from '../../../Popper';
-import AccountItem from '../../../AccountItem';
-import Menu, { MenuItems } from '../../../Popper/Menu';
+import Button from '../../../../components/Button';
 import {
     CoinIcon,
     FeedbackIcon,
@@ -20,19 +15,20 @@ import {
     KeyboardIcon,
     LanguageIcon,
     LogoutIcon,
-    MessageIcon,
-    SearchIcon,
-    SettingIcon,
+    MessageIcon, SettingIcon,
     UploadIcon,
-    UserIcon,
+    UserIcon
 } from '../../../Icons';
 import Image from '../../../Image';
+import Menu, { MenuItems } from '../../../Popper/Menu';
+import styles from './Header.module.scss';
+
 
 const cx = className.bind(styles);
 
 const MENU_ITEMS = [
     {
-        icon: <img src={images.language} />,
+        icon: <LanguageIcon />,
         title: 'English',
         children: {
             title: 'Language',
@@ -63,16 +59,8 @@ const MENU_ITEMS = [
 
 const Header: React.FC = () => {
     // State
-    const [searchResult, setSearchResult] = useState<Array<string | number>>([]);
 
     const currentUser = true;
-
-    //useEffect
-    useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 0);
-    }, []);
 
     //handle
     const handleMenuChange = (menuItem: MenuItems) => {
@@ -118,38 +106,10 @@ const Header: React.FC = () => {
                 </div>
                 {/* Search */}
                 {/* Hover vào sẽ hiện ra text */}
-                <HeadlessTipply
-                    interactive
-                    visible={searchResult.length > 0}
-                    render={(attrs) => (
-                        <div className={cx('search-result')} tabIndex={-1} {...attrs}>
-                            <PopperWrapper>
-                                <h4 className={cx('search-title')}>Accounts</h4>
-                                <AccountItem />
-                                <AccountItem />
-                                <AccountItem />
-                            </PopperWrapper>
-                        </div>
-                    )}
-                >
-                    <div className={cx('search')}>
-                        <input placeholder="Search accounts and videos" spellCheck={false} />
-                        <button className={cx('clear')}>
-                            {/* Clear */}
-                            <FontAwesomeIcon icon={faCircleXmark as IconProp} />
-                        </button>
-
-                        {/* Loading */}
-                        <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} />
-
-                        <button className={cx('search-btn')}>
-                            {/* Search */}
-                            {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
-                            {/* <img src = {images.search} /> */}
-                            <SearchIcon />
-                        </button>
-                    </div>
-                </HeadlessTipply>
+                <Search />
+                
+                {/* End Search */}
+                
                 {/* Check User */}
                 <div className={cx('actions')}>
                     {currentUser ? (
