@@ -9,22 +9,43 @@ import styles from './Search.module.scss';
 import {SearchIcon} from '../../../Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
+import { DataApi,Data } from '../../../../types';
 
 const cx = className.bind(styles);
+
+
 
 const Search:React.FC = () => {
     //STATE
     const [searchValue,setSearchValue] = useState<string>('')
-    const [searchResult, setSearchResult] = useState<Array<string | number>>([]);
+    const [searchResult, setSearchResult] = useState<Array<DataApi>>([]);
     const [showResult,setShowResult] = useState<boolean>(true)
+    const [loading,setLoading] = useState<boolean>(false)
+    
 
     const inputRef = useRef<HTMLInputElement>(null)
       //useEffect
       useEffect(() => {
-        setTimeout(() => {
-            setSearchResult([1, 2, 3]);
-        }, 0);
-    }, []);
+          //check space
+        if(!searchValue.trim()) {
+            setSearchResult([])
+            return;
+        }
+        setLoading(true)
+
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+            .then(res=>res.json())
+            .then(res => {
+                setSearchResult(res.data)
+                console.log("DATA API :", res.data)
+                setLoading(false)
+            })
+            .catch(err => {
+                console.error(err)
+                setLoading(false)
+            })
+
+    }, [searchValue]);
 
     //handle
     const handleClear = () => {
@@ -45,9 +66,10 @@ const Search:React.FC = () => {
         <div className={cx('search-result')} tabIndex={-1} {...attrs}>
             <PopperWrapper>
                 <h4 className={cx('search-title')}>Accounts</h4>
-                <AccountItem />
-                <AccountItem />
-                <AccountItem />
+                {searchResult.map((result) => (
+                    <AccountItem key = {result.id} data={result}/>
+                ))}
+               
             </PopperWrapper>
         </div>
     )}
@@ -62,8 +84,8 @@ const Search:React.FC = () => {
         onChange={e=>setSearchValue(e.target.value)} 
         onFocus={()=>setShowResult(true)}
         />
-        {/* Khi có Search value thì mới hiện thị Button X */}
-        {!!searchValue && (
+        {/* Khi có Search value + không loading thì mới hiện thị Button X */}
+        {!!searchValue && !loading && (
 
         <button className={cx('clear')} onClick={handleClear}>
             {/* Clear */}
@@ -72,8 +94,8 @@ const Search:React.FC = () => {
         )}
 
         {/* Loading */}
-        {/* <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} /> */}
-
+        {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} />}
+        
         <button className={cx('search-btn')}>
             {/* Search */}
             {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
