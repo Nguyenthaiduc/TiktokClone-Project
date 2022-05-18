@@ -10,6 +10,7 @@ import {SearchIcon} from '../../../Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { DataApi,Data } from '../../../../types';
+import { useDebounce } from '../../../../hooks'
 
 const cx = className.bind(styles);
 
@@ -21,19 +22,25 @@ const Search:React.FC = () => {
     const [searchResult, setSearchResult] = useState<Array<DataApi>>([]);
     const [showResult,setShowResult] = useState<boolean>(true)
     const [loading,setLoading] = useState<boolean>(false)
+
+    //Khi người dùng gõ nếu dừng lại 500 mili giây thì mới bắt đầu tìm kiếm
+    //1:
+    //2 'h'
+    //3 ''
+    const debounced = useDebounce(searchValue,500)
     
 
     const inputRef = useRef<HTMLInputElement>(null)
       //useEffect
       useEffect(() => {
           //check space
-        if(!searchValue.trim()) {
+        if(!debounced.trim()) {
             setSearchResult([])
             return;
         }
         setLoading(true)
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(searchValue)}&type=less`)
+        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
             .then(res=>res.json())
             .then(res => {
                 setSearchResult(res.data)
@@ -45,7 +52,7 @@ const Search:React.FC = () => {
                 setLoading(false)
             })
 
-    }, [searchValue]);
+    }, [debounced]);
 
     //handle
     const handleClear = () => {

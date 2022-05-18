@@ -16,6 +16,7 @@
 >6. Fontawesome
 >7. Babel
 >8. Tippyjs React
+>9. Debounce
 
 # Debugger
 ```js
@@ -23,3 +24,5 @@ setTimeout(()=> {
     debugger
 },3000)
 ```
+### Cloud
+[SonarClound](https://sonarcloud.io/welcome)
