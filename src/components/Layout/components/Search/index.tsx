@@ -5,8 +5,8 @@ import { Wrapper as PopperWrapper } from '../../../Popper';
 import AccountItem from '../../../AccountItem';
 import className from 'classnames/bind';
 import styles from './Search.module.scss';
+import * as searchServices from '../../../../apiSearch/searchServices';
 
-import * as request from '../../../../utils/request';
 import {SearchIcon} from '../../../Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -39,25 +39,16 @@ const Search:React.FC = () => {
             setSearchResult([])
             return;
         }
-        setLoading(true)
-
+       
         //call api
         const fetchApi = async () => {
-            try {
-                const res = await request.get('users/search',{
-                    params: {
-                        q : debounced,
-                        type : 'less',
-                    },
-                });
-                setSearchResult(res.data);
-                setLoading(false);
-            } catch (err) {
-                setLoading(false);
-                throw new Error("Failed fetchApi Search !")
-            }
+            setLoading(true);
 
-        };
+            const result = await searchServices.search(debounced);
+            setSearchResult(result);
+            setLoading(false);
+        }
+
         fetchApi();
 
     }, [debounced]);
