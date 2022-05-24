@@ -1,4 +1,4 @@
-import React, { useEffect, useState,useRef } from 'react'
+import React, { useEffect, useState,useRef } from 'react';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTipply from '@tippyjs/react/headless';
 import { Wrapper as PopperWrapper } from '../../../Popper';
@@ -6,6 +6,7 @@ import AccountItem from '../../../AccountItem';
 import className from 'classnames/bind';
 import styles from './Search.module.scss';
 
+import * as request from '../../../../utils/request';
 import {SearchIcon} from '../../../Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
@@ -40,17 +41,24 @@ const Search:React.FC = () => {
         }
         setLoading(true)
 
-        fetch(`https://tiktok.fullstack.edu.vn/api/users/search?q=${encodeURIComponent(debounced)}&type=less`)
-            .then(res=>res.json())
-            .then(res => {
-                setSearchResult(res.data)
-                console.log("DATA API :", res.data)
-                setLoading(false)
-            })
-            .catch(err => {
-                console.error(err)
-                setLoading(false)
-            })
+        //call api
+        const fetchApi = async () => {
+            try {
+                const res = await request.get('users/search',{
+                    params: {
+                        q : debounced,
+                        type : 'less',
+                    },
+                });
+                setSearchResult(res.data);
+                setLoading(false);
+            } catch (err) {
+                setLoading(false);
+                throw new Error("Failed fetchApi Search !")
+            }
+
+        };
+        fetchApi();
 
     }, [debounced]);
 
