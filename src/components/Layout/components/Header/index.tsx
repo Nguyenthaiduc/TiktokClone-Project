@@ -8,6 +8,7 @@ import React, { useEffect, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
 import { images } from '../../../../assets/images';
 import Button from '../../../../components/Button';
+import { Link } from 'react-router-dom';
 import {
     CoinIcon,
     FeedbackIcon,
@@ -102,7 +103,9 @@ const Header: React.FC = () => {
             <div className={cx('inner')}>
                 {/* Logo */}
                 <div className={cx('logo')}>
-                    <img src={images.logo} alt="TikTok" />
+                    <Link to = "/" className={cx('logo-link')}>
+                        <img src={images.logo} alt="TikTok" />
+                    </Link>
                 </div>
                 {/* Search */}
                 {/* Hover vào sẽ hiện ra text */}
