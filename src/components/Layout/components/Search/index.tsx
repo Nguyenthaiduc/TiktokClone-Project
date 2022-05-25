@@ -110,7 +110,7 @@ const Search:React.FC = () => {
         {/* Loading */}
         {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} />}
         
-        <button className={cx('search-btn')}>
+        <button className={cx('search-btn')} onMouseDown={e=>e.preventDefault()}>
             {/* Search */}
             {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
             {/* <img src = {images.search} /> */}
