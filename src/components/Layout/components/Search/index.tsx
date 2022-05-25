@@ -58,10 +58,18 @@ const Search:React.FC = () => {
         setSearchValue('')
         setSearchResult([])
         inputRef.current?.focus()
-    }
+    };
     const handleHideResult = () => {
         setShowResult(false)
+    };
+
+    const handleChange = (e : React.ChangeEvent<HTMLInputElement>) => {
+        const searchValue = e.target.value;
+        if(!searchValue.startsWith(' ')) {
+            setSearchValue(searchValue);
+        }
     }
+
 
 
   return (
@@ -87,7 +95,7 @@ const Search:React.FC = () => {
         value={searchValue}
         placeholder="Search accounts and videos" 
         spellCheck={false} 
-        onChange={e=>setSearchValue(e.target.value)} 
+        onChange={handleChange} 
         onFocus={()=>setShowResult(true)}
         />
         {/* Khi có Search value + không loading thì mới hiện thị Button X */}
