@@ -23,6 +23,7 @@ import {
 import Image from '../../../Image';
 import Menu, { MenuItems } from '../../../Popper/Menu';
 import styles from './Header.module.scss';
+import routesConfig from '../../../../config/routes';
 
 
 const cx = className.bind(styles);
@@ -103,7 +104,7 @@ const Header: React.FC = () => {
             <div className={cx('inner')}>
                 {/* Logo */}
                 <div className={cx('logo')}>
-                    <Link to = "/" className={cx('logo-link')}>
+                    <Link to = {routesConfig.home} className={cx('logo-link')}>
                         <img src={images.logo} alt="TikTok" />
                     </Link>
                 </div>

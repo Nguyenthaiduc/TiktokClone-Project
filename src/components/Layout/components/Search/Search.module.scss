@@ -17,8 +17,9 @@
         height: 100%;
         color : var(--black);
         font-size :1.6rem;
-        background-color: transparent;
         caret-color: var(--primary); /* focus màu*/
+        background-color: transparent;
+        font-family: var(--font-family);
     }
 
     input:not(:placeholder-shown) ~ .search-btn{
