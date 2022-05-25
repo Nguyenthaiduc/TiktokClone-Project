@@ -28,12 +28,13 @@ interface PropTypes {
         children?: Object;
     }[];
     onChange?: (menuItem: MenuItems) => void;
+    hideOnClick?: boolean;
     children?: React.ReactElement;
 }
 
 const defaultFn = () => {};
 
-const Menu: React.FC<PropTypes> = ({ children, items = [], onChange = defaultFn }) => {
+const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, onChange = defaultFn }) => {
     //state
     const [history, setHistory] = useState([{ data: items } ]);
     const current = history[history.length - 1];
@@ -63,6 +64,7 @@ const Menu: React.FC<PropTypes> = ({ children, items = [], onChange = defaultFn 
             interactive
             delay={[0, 700]}
             offset={[12,8]}
+            hideOnClick={hideOnClick}
             placement="bottom-end"
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex={-1} {...attrs}>
