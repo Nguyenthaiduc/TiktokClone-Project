@@ -7,7 +7,7 @@ import className from 'classnames/bind';
 import styles from './Search.module.scss';
 import * as searchServices from '../../../../apiSearch/searchServices';
 
-import {SearchIcon} from '../../../Icons';
+import {Loading, SearchIcon} from '../../../Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { DataApi,Data } from '../../../../types';
@@ -109,6 +109,7 @@ const Search:React.FC = () => {
 
         {/* Loading */}
         {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} />}
+        {/* {loading && <Loading className={cx('loading')} />} */}
         
         <button className={cx('search-btn')} onMouseDown={e=>e.preventDefault()}>
             {/* Search */}

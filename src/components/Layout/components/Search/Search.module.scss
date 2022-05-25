@@ -64,6 +64,9 @@
 .loading {
     animation: spinner 0.7s linear infinite;
 }
+.loading2 {
+    
+}
 @keyframes spinner {
     from {
         transform: translateY(-50%) rotate(0);

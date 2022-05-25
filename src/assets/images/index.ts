@@ -14,6 +14,7 @@ import coin from './coin.svg'
 import setting from './setting.svg'
 import logout from './logout.svg'
 import noImage from './no-image.png'
+import loading from './loading.svg'
 export const images = {
     logo,
     check,
@@ -31,4 +32,5 @@ export const images = {
     setting,
     logout,
     noImage,
+    loading,
 };
