@@ -15,6 +15,7 @@ import setting from './setting.svg'
 import logout from './logout.svg'
 import noImage from './no-image.png'
 import loading from './loading.svg'
+import circleX from './circleX.svg'
 export const images = {
     logo,
     check,
@@ -33,4 +34,5 @@ export const images = {
     logout,
     noImage,
     loading,
+    circleX,
 };

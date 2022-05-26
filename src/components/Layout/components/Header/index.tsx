@@ -24,6 +24,7 @@ import Image from '../../../Image';
 import Menu, { MenuItems } from '../../../Popper/Menu';
 import styles from './Header.module.scss';
 import routesConfig from '../../../../config/routes';
+import { LanguageData } from '../../../../data/language';
 
 
 const cx = className.bind(styles);
@@ -34,18 +35,7 @@ const MENU_ITEMS = [
         title: 'English',
         children: {
             title: 'Language',
-            data: [
-                {
-                    type: 'language',
-                    code: 'en',
-                    title: 'English',
-                },
-                {
-                    type: 'language',
-                    code: 'vi',
-                    title: 'Tiếng Việt',
-                },
-            ],
+            data: LanguageData
         },
     },
     {

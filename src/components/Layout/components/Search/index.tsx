@@ -7,7 +7,7 @@ import className from 'classnames/bind';
 import styles from './Search.module.scss';
 import * as searchServices from '../../../../apiSearch/searchServices';
 
-import {Loading, SearchIcon} from '../../../Icons';
+import {CircleX, Loading, SearchIcon} from '../../../Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { DataApi,Data } from '../../../../types';
@@ -104,6 +104,8 @@ const Search:React.FC = () => {
         <button className={cx('clear')} onClick={handleClear}>
             {/* Clear */}
             <FontAwesomeIcon icon={faCircleXmark as IconProp} />
+            {/* <CircleX  className={cx('button')}/> */}
+            
         </button>
         )}
 
