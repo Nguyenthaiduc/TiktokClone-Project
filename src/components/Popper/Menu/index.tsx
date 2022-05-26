@@ -82,6 +82,7 @@ const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, o
                 </div>
             )}
             onHide={()=> setHistory((prev)=> prev.slice(0,1))}
+            
         >
             {children}
         </Tippy>

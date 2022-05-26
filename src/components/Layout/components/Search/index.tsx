@@ -73,54 +73,58 @@ const Search:React.FC = () => {
 
 
   return (
-    <HeadlessTipply
-    interactive
-    visible={showResult && searchResult.length > 0}
-    render={(attrs) => (
-        <div className={cx('search-result')} tabIndex={-1} {...attrs}>
-            <PopperWrapper>
-                <h4 className={cx('search-title')}>Accounts</h4>
-                {searchResult.map((result) => (
-                    <AccountItem key = {result.id} data={result}/>
-                ))}
-               
-            </PopperWrapper>
-        </div>
-    )}
-    onClickOutside={handleHideResult}
->
-    <div className={cx('search')}>
-        <input 
-        ref={inputRef}
-        value={searchValue}
-        placeholder="Search accounts and videos" 
-        spellCheck={false} 
-        onChange={handleChange} 
-        onFocus={()=>setShowResult(true)}
-        />
-        {/* Khi có Search value + không loading thì mới hiện thị Button X */}
-        {!!searchValue && !loading && (
-
-        <button className={cx('clear')} onClick={handleClear}>
-            {/* Clear */}
-            <FontAwesomeIcon icon={faCircleXmark as IconProp} />
-            {/* <CircleX  className={cx('button')}/> */}
-            
-        </button>
+    /* Using a wrapper <div> or <span> tag around the reference element solves 
+    this by creating a new parentNode context*/
+    <div>
+        <HeadlessTipply
+            interactive
+            visible={showResult && searchResult.length > 0}
+            render={(attrs) => (
+            <div className={cx('search-result')} tabIndex={-1} {...attrs}>
+                <PopperWrapper>
+                    <h4 className={cx('search-title')}>Accounts</h4>
+                    {searchResult.map((result) => (
+                        <AccountItem key = {result.id} data={result}/>
+                    ))}
+                   
+                </PopperWrapper>
+            </div>
         )}
-
-        {/* Loading */}
-        {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} />}
-        {/* {loading && <Loading className={cx('loading')} />} */}
-        
-        <button className={cx('search-btn')} onMouseDown={e=>e.preventDefault()}>
-            {/* Search */}
-            {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
-            {/* <img src = {images.search} /> */}
-            <SearchIcon />
-        </button>
+        onClickOutside={handleHideResult}
+    >
+        <div className={cx('search')}>
+            <input 
+            ref={inputRef}
+            value={searchValue}
+            placeholder="Search accounts and videos" 
+            spellCheck={false} 
+            onChange={handleChange} 
+            onFocus={()=>setShowResult(true)}
+            />
+            {/* Khi có Search value + không loading thì mới hiện thị Button X */}
+            {!!searchValue && !loading && (
+    
+            <button className={cx('clear')} onClick={handleClear}>
+                {/* Clear */}
+                <FontAwesomeIcon icon={faCircleXmark as IconProp} />
+                {/* <CircleX  className={cx('button')}/> */}
+                
+            </button>
+            )}
+    
+            {/* Loading */}
+            {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner as IconProp} />}
+            {/* {loading && <Loading className={cx('loading')} />} */}
+            
+            <button className={cx('search-btn')} onMouseDown={e=>e.preventDefault()}>
+                {/* Search */}
+                {/* <FontAwesomeIcon icon={faMagnifyingGlass as IconProp} /> */}
+                {/* <img src = {images.search} /> */}
+                <SearchIcon />
+            </button>
+        </div>
+    </HeadlessTipply>
     </div>
-</HeadlessTipply>
   )
 }
 
