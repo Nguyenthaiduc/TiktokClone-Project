@@ -77,7 +77,7 @@ const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, o
                                 }}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

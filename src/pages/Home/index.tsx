@@ -2,7 +2,7 @@ import React from 'react'
 
 const Home : React.FC = () => {
   return (
-    <h2>
+    <h2 style={{ height: '2000px'}}>
         Home
     </h2>
   )
