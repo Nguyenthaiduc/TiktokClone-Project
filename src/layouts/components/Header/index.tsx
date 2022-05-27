@@ -6,8 +6,8 @@ import Tippy from '@tippyjs/react';
 import className from 'classnames/bind';
 import React, { useEffect, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
-import { images } from '../../../../assets/images';
-import Button from '../../../../components/Button';
+import { images } from '../../../assets/images';
+import Button from '../../../components/Button';
 import { Link } from 'react-router-dom';
 import {
     CoinIcon,
@@ -19,12 +19,12 @@ import {
     MessageIcon, SettingIcon,
     UploadIcon,
     UserIcon
-} from '../../../Icons';
-import Image from '../../../Image';
-import Menu, { MenuItems } from '../../../Popper/Menu';
+} from '../../../components/Icons';
+import Image from '../../../components/Image';
+import Menu, { MenuItems } from '../../../components/Popper/Menu';
 import styles from './Header.module.scss';
-import routesConfig from '../../../../config/routes';
-import { LanguageData } from '../../../../data/language';
+import config from '../../../config';
+import { LanguageData } from '../../../data/language';
 
 
 const cx = className.bind(styles);
@@ -94,7 +94,7 @@ const Header: React.FC = () => {
             <div className={cx('inner')}>
                 {/* Logo */}
                 <div className={cx('logo')}>
-                    <Link to = {routesConfig.home} className={cx('logo-link')}>
+                    <Link to = {config.routes.home} className={cx('logo-link')}>
                         <img src={images.logo} alt="TikTok" />
                     </Link>
                 </div>

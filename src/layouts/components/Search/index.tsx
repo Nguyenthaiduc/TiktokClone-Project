@@ -1,17 +1,17 @@
 import React, { useEffect, useState,useRef } from 'react';
 import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTipply from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '../../../Popper';
-import AccountItem from '../../../AccountItem';
+import { Wrapper as PopperWrapper } from '../../../components/Popper';
+import AccountItem from '../../../components/AccountItem';
 import className from 'classnames/bind';
 import styles from './Search.module.scss';
-import * as searchServices from '../../../../apiSearch/searchServices';
+import * as searchServices from '../../../services/searchService';
 
-import {CircleX, Loading, SearchIcon} from '../../../Icons';
+import {CircleX, Loading, SearchIcon} from '../../../components/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { DataApi,Data } from '../../../../types';
-import { useDebounce } from '../../../../hooks'
+import { DataApi,Data } from '../../../types';
+import { useDebounce } from '../../../hooks'
 
 const cx = className.bind(styles);
 
