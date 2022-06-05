@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
-import { Wrapper as PopperWrapper } from '../../../components/Popper';
+import { Wrapper as PopperWrapper } from '@/components/Popper';
 import MenuItem from './MenuItem';
 import Header from './Header';
 
@@ -15,8 +15,8 @@ export type MenuItems = {
         icon: React.ReactElement;
         title: string;
         type?: string;
-        to?: string | undefined;
-        children?: Object | undefined;
+        to?: string;
+        children?: Object;
     };
 
 interface PropTypes {

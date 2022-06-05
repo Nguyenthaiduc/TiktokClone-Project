@@ -6,8 +6,8 @@ import Tippy from '@tippyjs/react';
 import className from 'classnames/bind';
 import React, { useEffect, useState } from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
-import { images } from '../../../assets/images';
-import Button from '../../../components/Button';
+import { images } from '@/assets/images';
+import Button from '@/components/Button';
 import { Link } from 'react-router-dom';
 import {
     CoinIcon,
