@@ -113,14 +113,19 @@ const Header: React.FC = () => {
                                     <UploadIcon />
                                 </button>
                             </Tippy>
-                            <button className={cx('action-btn')}>
-                                {/* <img src = {images.message} /> */}
-                                <MessageIcon />
-                            </button>
-                            <button className={cx('action-btn')}>
-                                {/* <img src = {images.inbox} /> */}
-                                <InboxIcon />
-                            </button>
+                            
+                            <Tippy delay={[0, 1]} content="Message">
+                                <button className={cx('action-btn')}>
+                                    {/* <img src = {images.message} /> */}
+                                    <MessageIcon />
+                                </button>
+                            </Tippy>
+                            <Tippy delay={[0, 2]} content="Inbox">
+                                <button className={cx('action-btn')}>
+                                    {/* <img src = {images.inbox} /> */}
+                                    <InboxIcon />
+                                </button>
+                            </Tippy>
                         </>
                     ) : (
                         <>

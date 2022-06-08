@@ -20,13 +20,7 @@ export type MenuItems = {
     };
 
 interface PropTypes {
-    items: {
-        icon: React.ReactElement;
-        title: string;
-        type?: string;
-        to?: string;
-        children?: Object;
-    }[];
+    items: MenuItems[];
     onChange?: (menuItem: MenuItems) => void;
     hideOnClick?: boolean;
     children?: React.ReactElement;
@@ -71,7 +65,7 @@ const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, o
                     <PopperWrapper className={cx('menu-popper')}>
                         {history.length > 1 && (
                             <Header
-                                title="Language"
+                                title={current.title}
                                 onBack={() => {
                                     setHistory((prev) => prev.slice(0, prev.length - 1));
                                 }}
