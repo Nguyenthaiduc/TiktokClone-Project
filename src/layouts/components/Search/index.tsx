@@ -7,7 +7,7 @@ import className from 'classnames/bind';
 import styles from './Search.module.scss';
 import * as searchServices from '@/services/searchService';
 
-import {CircleX, Loading, SearchIcon} from '../../../components/Icons';
+import {CircleX, Loading, SearchIcon} from '@/components/Icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { DataApi,Data } from '@/types';

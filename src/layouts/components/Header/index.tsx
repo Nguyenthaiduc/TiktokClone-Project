@@ -19,12 +19,12 @@ import {
     MessageIcon, SettingIcon,
     UploadIcon,
     UserIcon
-} from '../../../components/Icons';
-import Image from '../../../components/Image';
-import Menu, { MenuItems } from '../../../components/Popper/Menu';
+} from '@/components/Icons';
+import Image from '@/components/Image';
+import Menu, { MenuItems } from '@/components/Popper/Menu';
 import styles from './Header.module.scss';
-import config from '../../../config';
-import { LanguageData } from '../../../data/language';
+import config from '@/config';
+import { LanguageData } from '@/data/language';
 
 
 const cx = className.bind(styles);
