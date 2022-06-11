@@ -8,7 +8,7 @@ interface PropTypes {
 const GlobalStyles : FC<PropTypes> = ({ children }) => {
     return(
         <>
-        {children}
+      {children}
         </>
     )
 
