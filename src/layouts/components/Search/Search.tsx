@@ -21,21 +21,21 @@ const Search:React.FC = () => {
     //STATE
     const [searchValue,setSearchValue] = useState<string>('')
     const [searchResult, setSearchResult] = useState<Array<DataApi>>([]);
-    const [showResult,setShowResult] = useState<boolean>(true)
+    const [showResult,setShowResult] = useState<boolean>(false)
     const [loading,setLoading] = useState<boolean>(false)
 
     //Khi người dùng gõ nếu dừng lại 500 mili giây thì mới bắt đầu tìm kiếm
     //1:
     //2 'h'
     //3 ''
-    const debounced = useDebounce(searchValue,500)
+    const debouncedValue = useDebounce(searchValue,500)
     
 
     const inputRef = useRef<HTMLInputElement>(null)
       //useEffect
       useEffect(() => {
           //check space
-        if(!debounced.trim()) {
+        if(!debouncedValue.trim()) {
             setSearchResult([])
             return;
         }
@@ -44,14 +44,14 @@ const Search:React.FC = () => {
         const fetchApi = async () => {
             setLoading(true);
 
-            const result = await searchServices.search(debounced);
+            const result = await searchServices.search(debouncedValue);
             setSearchResult(result);
             setLoading(false);
         }
 
         fetchApi();
 
-    }, [debounced]);
+    }, [debouncedValue]);
 
     //handle
     const handleClear = () => {

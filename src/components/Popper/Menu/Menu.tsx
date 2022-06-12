@@ -82,8 +82,8 @@ const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, o
     );
 
 
-    // Reset to first page               
-    const handleResetMenu = () => {
+    // Reset to first page menu              
+    const handleReset = () => {
         setHistory((prev)=> prev.slice(0,1));
     };
 
@@ -95,7 +95,7 @@ const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, o
             hideOnClick={hideOnClick}
             placement="bottom-end"
             render={resultRender}   
-            onHide={handleResetMenu}
+            onHide={handleReset}
             
         >
             {children}
