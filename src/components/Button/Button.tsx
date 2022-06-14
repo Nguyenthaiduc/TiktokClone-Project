@@ -21,7 +21,7 @@ interface PropTypes {
     leftIcon?: React.ReactElement;
     rightIcon?: React.ReactElement;
 }
-type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string | any
+type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string
 
 const Button: React.FC<PropTypes> = ({
     to,
@@ -41,7 +41,7 @@ const Button: React.FC<PropTypes> = ({
     ...passProps
 }) => {
     let Comp: CompoType = 'button';
-    const props = { onClick, to, href, ...passProps };
+    const props = { onClick, to, href, ...passProps } as any;
 
     //Remove Event Listener when Button disabled
     if(disabled) {

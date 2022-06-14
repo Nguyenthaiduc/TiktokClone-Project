@@ -8,10 +8,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Image from '@/components/Image'
 import { DataApi,Data } from '@/types'
 
-
 const cx = classNames.bind(styles);
+interface PropTypes {
+    data?: Data | any
+}
+
 //Modal tìm kiếm sẽ hiện danh sách Accounts
-const AccountItem: React.FC<Data> = ({ data }) => {
+const AccountItem: React.FC<PropTypes> = ({ data }) => {
     return (
         <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
             <Image
