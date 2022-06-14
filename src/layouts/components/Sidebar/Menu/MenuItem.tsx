@@ -9,12 +9,14 @@ interface PropTypes {
     title?: string;
     to: To;
     icon?: JSX.Element;
+    activeIcon?: JSX.Element;
 }
 
-const MenuItem: React.FC<PropTypes> = ({ title, to , icon }) => {
+const MenuItem: React.FC<PropTypes> = ({ title, to , icon , activeIcon}) => {
   return (
     <NavLink className={(nav) => cx('menu-item', { active: nav.isActive })} to={to}>
-        {icon}
+        <span className={cx('icon')}>{icon}</span>
+        <span className={cx('active-icon')}>{activeIcon}</span>
         <span className={cx('title')}>{title}</span>
     </NavLink>
   )
