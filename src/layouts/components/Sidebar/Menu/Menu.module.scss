@@ -5,7 +5,12 @@
     font-size: 1.8rem;
     font-weight: 700;
     border-radius: 4px;
-    transition: background ease-in-out 200ms;
+    color: var(--text-color);
+    transition: background-color ease-in-out 200ms;
+
+    &.active {
+        color: var(--primary);
+    }
 
     &:hover {
         background-color: rgba(22, 24, 35, 0.03);

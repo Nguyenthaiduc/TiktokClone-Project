@@ -13,7 +13,7 @@ interface PropTypes {
 
 const MenuItem: React.FC<PropTypes> = ({ title, to , icon }) => {
   return (
-    <NavLink className={cx('menu-item')} to={to}>
+    <NavLink className={(nav) => cx('menu-item', { active: nav.isActive })} to={to}>
         {icon}
         <span className={cx('title')}>{title}</span>
     </NavLink>
