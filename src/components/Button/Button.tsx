@@ -5,7 +5,7 @@ import { Link, LinkProps } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-interface Props {
+type Props = {
     to?: string;
     href?: string;
     primary?: string | boolean;

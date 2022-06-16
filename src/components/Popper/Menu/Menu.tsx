@@ -20,7 +20,7 @@ export type MenuItems = {
         children?: Object;
     };
 
-interface PropTypes {
+type Props = {
     items: MenuItems[];
     onChange?: (menuItem: MenuItems) => void;
     hideOnClick?: boolean;
@@ -36,7 +36,7 @@ type RenderResult = {
 
 const defaultFn = () => {};
 
-const Menu: React.FC<PropTypes> = ({ children, items = [],hideOnClick = false, onChange = defaultFn }) => {
+const Menu = ({ children, items = [],hideOnClick = false, onChange = defaultFn }: Props): JSX.Element => {
     //state
     const [history, setHistory] = useState([{ data: items } ]);
     const current = history[history.length - 1];

@@ -26,3 +26,9 @@ setTimeout(()=> {
 ```
 ### Remove React.FC from Typescript template
 [Create React App](https://github.com/facebook/create-react-app/pull/8177) Downsides to React.FC/React.FunctionComponent
+### Installion
+```bash
+$ npm install
+$ npm run dev
+$ npm run build
+```

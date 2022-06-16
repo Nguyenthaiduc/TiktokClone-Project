@@ -1,5 +1,4 @@
 
-import React from 'react'
 
 import classNames from 'classnames/bind'
 import styles from './Menu.module.scss'
@@ -7,12 +6,12 @@ import { images } from '@/assets/images'
 
 const cx = classNames.bind(styles)
 
-interface PropTypes {
+type Props = {
     title?: string
     onBack?: () => void
 }
 
-const Header:React.FC<PropTypes> = ({title, onBack}) => {
+const Header = ({title, onBack}: Props): JSX.Element => {
 
     return (
         <header className={cx('header')}>

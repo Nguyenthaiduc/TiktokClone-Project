@@ -7,7 +7,7 @@ import Button from '../../Button'
 const cx = classNames.bind(styles)
 
 
-interface PropTypes {
+type Props = {
     data: {
         icon: React.ReactElement;
         title: string;
@@ -18,7 +18,7 @@ interface PropTypes {
     onClick : () => void
 }
 
-const MenuItem : React.FC<PropTypes> = ({data,onClick}) => {
+const MenuItem  = ( {data,onClick }: Props): JSX.Element => {
     const classes = cx('menu-item',{
         separate: data.separate,
     })
