@@ -7,7 +7,7 @@
 
 
 ### Package Hỗ trợ 
->1. Create react app Webpack || Vite Flash
+>1. Create React App Webpack || Vite Flash 
 >2. Prettier Formatter Code Beautiful
 >3. Node SASS/SCSS
 >4. Reset CSS Normalize
@@ -24,5 +24,5 @@ setTimeout(()=> {
     debugger
 },3000)
 ```
-### Cloud
-[SonarClound](https://sonarcloud.io/welcome)
+### Remove React.FC from Typescript template
+[Create React App](https://github.com/facebook/create-react-app/pull/8177) Downsides to React.FC/React.FunctionComponent

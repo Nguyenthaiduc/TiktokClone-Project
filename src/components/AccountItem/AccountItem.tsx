@@ -1,4 +1,4 @@
-import React from 'react';
+
 import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
@@ -9,12 +9,13 @@ import Image from '@/components/Image'
 import { DataApi,Data } from '@/types'
 
 const cx = classNames.bind(styles);
-interface PropTypes {
+interface Props {
     data?: Data | any
 }
 
-//Modal tìm kiếm sẽ hiện danh sách Accounts
-const AccountItem: React.FC<PropTypes> = ({ data }) => {
+// Modal tìm kiếm sẽ hiện danh sách Accounts
+// Remove React.FC from Typescript template
+const AccountItem  = ({ data }: Props): JSX.Element => {
     return (
         <Link to={`/@${data.nickname}`} className={cx('wrapper')}>
             <Image
