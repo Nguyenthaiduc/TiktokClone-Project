@@ -1,11 +1,9 @@
-import React,{FC} from 'react'
+import { PropsWithChildren} from 'react'
 import './GlobalStyles.scss'
 
-interface PropTypes {
-    children?: React.ReactNode
-}
-
-const GlobalStyles : FC<PropTypes> = ({ children }) => {
+interface Props extends PropsWithChildren<unknown>{   }
+// Remove React.FC from Typescript template
+const GlobalStyles  = ({ children }: Props) : JSX.Element => {
     return(
         <>
       {children}

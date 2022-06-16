@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Search from '../Search'
 import Tippy from '@tippyjs/react';
 import className from 'classnames/bind';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import 'tippy.js/dist/tippy.css'; // optional
 import { images } from '@/assets/images';
 import Button from '@/components/Button';

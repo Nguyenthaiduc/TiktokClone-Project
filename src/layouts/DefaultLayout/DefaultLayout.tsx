@@ -1,16 +1,16 @@
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
-import React from 'react';
+import { PropsWithChildren } from 'react';
 import styles from './DefaultLayout.module.scss'
 import classNames from 'classnames/bind'
 
 const cx = classNames.bind(styles)
 
-interface PropTypes {
-    children?: React.ReactNode;
-}
+interface Props extends PropsWithChildren<unknown> { 
 
-const DefaultLayout: React.FC<PropTypes> = ({ children }) => {
+}
+// Remove React.FC from Typescript template
+const DefaultLayout = ({ children }: Props): JSX.Element => {
     return (
         <div className={cx('wrapper')}>
             <Header />

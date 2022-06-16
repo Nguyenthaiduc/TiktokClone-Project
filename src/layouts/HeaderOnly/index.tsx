@@ -1,12 +1,11 @@
 import Header from '../components/Header';
 
-import React from 'react';
+import { PropsWithChildren } from 'react';
 
-interface PropTypes {
-    children?: React.ReactNode;
+interface Props extends PropsWithChildren<unknown> {
 }
-
-const HeaderOnly: React.FC<PropTypes> = ({ children }) => {
+// Remove React.FC from Typescript template
+const HeaderOnly = ({ children }: Props): JSX.Element => {
     return (
         <div>
             <Header />
