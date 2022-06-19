@@ -1,10 +1,8 @@
-import React from 'react'
+import { PropsWithChildren } from 'react'
 
-interface PropTypes {
-    children?: React.ReactNode;
-}
+interface Props extends PropsWithChildren<unknown>{ }
 
-const Menu: React.FC<PropTypes> = ({ children }) => {
+const Menu = ({ children } : Props): JSX.Element => {
   return (
    <nav>
     {children}

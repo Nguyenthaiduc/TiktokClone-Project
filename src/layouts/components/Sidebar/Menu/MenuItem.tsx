@@ -5,14 +5,14 @@ import styles from './Menu.module.scss';
 
 const cx = className.bind(styles);
 
-interface PropTypes {
+type Props  = {
     title?: string;
     to: To;
     icon?: JSX.Element;
     activeIcon?: JSX.Element;
 }
 
-const MenuItem: React.FC<PropTypes> = ({ title, to , icon , activeIcon}) => {
+const MenuItem = ({ title, to , icon , activeIcon}: Props): JSX.Element => {
   return (
     <NavLink className={(nav) => cx('menu-item', { active: nav.isActive })} to={to}>
         <span className={cx('icon')}>{icon}</span>
