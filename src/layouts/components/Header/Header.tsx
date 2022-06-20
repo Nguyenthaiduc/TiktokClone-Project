@@ -1,7 +1,7 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { faSignIn } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Search from '../Search'
+import Search from '../Search';
 import Tippy from '@tippyjs/react';
 import className from 'classnames/bind';
 import React from 'react';

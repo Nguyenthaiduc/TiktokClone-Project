@@ -3,13 +3,13 @@ import classNames from 'classnames/bind';
 import styles from './AccountItem.module.scss';
 import { faCheckCircle } from '@fortawesome/free-solid-svg-icons';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Image from '@/components/Image'
-import { DataApi,Data } from '@/types'
+import Image from '@/components/Image';
+import { DataApi,Data } from '@/types';
 
 const cx = classNames.bind(styles);
-interface Props {
+type Props = {
     data?: Data | any
 }
 

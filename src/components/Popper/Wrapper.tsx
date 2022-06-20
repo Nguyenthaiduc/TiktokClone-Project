@@ -1,6 +1,6 @@
-import { PropsWithChildren } from 'react'
-import classNames from 'classnames/bind'
-import styles from './Popper.module.scss'
+import { PropsWithChildren } from 'react';
+import classNames from 'classnames/bind';
+import styles from './Popper.module.scss';
 
 interface Props extends PropsWithChildren<unknown>{
     className?:string
