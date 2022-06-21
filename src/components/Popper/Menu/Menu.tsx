@@ -1,5 +1,5 @@
 import Tippy from '@tippyjs/react/headless';
-import React, { useState } from 'react';
+import React, { PropsWithChildren, useState } from 'react';
 
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
@@ -20,11 +20,11 @@ export type MenuItems = {
         children?: Object;
     };
 
-type Props = {
+interface Props extends PropsWithChildren<unknown> {
     items: MenuItems[];
     onChange?: (menuItem: MenuItems) => void;
     hideOnClick?: boolean;
-    children?: React.ReactElement;
+    children?: React.ReactElement
 }
 
 type RenderResult = {
@@ -35,7 +35,7 @@ type RenderResult = {
 
 
 const defaultFn = () => {};
-
+// Remove React.FC from Typescript template
 const Menu = ({ children, items = [],hideOnClick = false, onChange = defaultFn }: Props): JSX.Element => {
     //state
     const [history, setHistory] = useState([{ data: items } ]);

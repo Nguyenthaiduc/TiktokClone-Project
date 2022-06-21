@@ -1,5 +1,5 @@
-import { PropsWithChildren} from 'react'
-import './GlobalStyles.scss'
+import { PropsWithChildren} from 'react';
+import './GlobalStyles.scss';
 
 interface Props extends PropsWithChildren<unknown>{   }
 // Remove React.FC from Typescript template

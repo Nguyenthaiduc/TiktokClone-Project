@@ -17,7 +17,7 @@ type Props = {
     },
     onClick : () => void
 }
-
+// Remove React.FC from Typescript template
 const MenuItem  = ( {data,onClick }: Props): JSX.Element => {
     const classes = cx('menu-item',{
         separate: data.separate,
