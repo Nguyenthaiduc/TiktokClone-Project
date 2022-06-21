@@ -66,24 +66,63 @@ setTimeout(()=> {
      │            │      ├── Header.tsx
      │            │      ├── Menu.module.scss
      │            │      ├── Menu.tsx
-     │            │      ├── MenuItem.tsx
+     │            │      └── MenuItem.tsx
      │            ├── Popper.module.scss
      │            └── Wrapper.tsx
      │
      │
-     ├── .env.development
-     ├── .env.production
-     ├── eslintrc.json  
-     ├── .gitignore
-     ├── .prettierrc
-     ├── index.html
-     ├── LICENSE
-     ├── package-lock.json
-     ├── package.json
-     ├── README.md
-     ├── tsconfig.ts
-     ├── tsconfig.node.json
-     ├── vite.config.ts
+     ├── config
+     │      └── routes.ts
+     ├── data
+     │      └── language.ts
+     ├── hooks
+     │      └── useDebounce.ts  
+     ├── layouts
+     │      ├── components
+     │      │        ├── Header
+     │      │        │       ├── Header.module.scss
+     │      │        │       └── Header.tsx
+     │      │        ├── Search
+     │      │        │       ├── Search.module.scss
+     │      │        │       └── Search.tsx
+     │      │        └── Sidebar
+     │      │                ├── Menu
+     │      │                │      ├── Menu.module.scss
+     │      │                │      └── Menu.tsx
+     │      │                ├── Sidebar.module.scss 
+     │      │                └── Sidebar.tsx
+     │      │
+     │      ├── DefaultLayout
+     │      │           ├── DefaultLayout.module.scss
+     │      │           └── DefaultLayout.tsx
+     │      │
+     │      └── HeaderOnly
+     │                  └── HeaderOnly.tsx
+     │
+     ├── pages
+     │       ├── Following
+     │       │       └── Following.tsx
+     │       ├── Home
+     │       │       └── Home.tsx
+     │       ├── Live
+     │       │       └── Live.tsx
+     │       ├── Profile
+     │       │       └── Profile.tsx
+     │       ├── Search
+     │       │       └── Search.tsx
+     │       └── Upload
+     │               └── Upload.tsx
+     ├── routes
+     │       └── routes.ts
+     ├── services
+     │       └── searchService.ts
+     ├── types
+     ├── utils
+     │       └── httpRequest.ts
+     ├── App.tsx
+     ├── favicon.io
+     ├── main.tsx
+     └── vite-en.d.ts
 
       │   ├──  └──
 ```
