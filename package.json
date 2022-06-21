@@ -1,5 +1,7 @@
 {
     "name": "tiktok-clone-project",
+    "author": "Nguyen Thai Duc",
+    "license" : "GPL-3.0-only",
     "private": true,
     "version": "0.0.0",
     "scripts": {
