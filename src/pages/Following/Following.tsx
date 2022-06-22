@@ -7,3 +7,12 @@ const Following : React.FC = () => {
 }
 
 export default Following
+
+
+
+
+
+/**
+  * @author - Nguyen Thai Duc
+  * @course -  F8
+*/

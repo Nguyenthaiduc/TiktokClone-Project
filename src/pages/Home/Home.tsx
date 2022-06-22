@@ -9,3 +9,10 @@ const Home : React.FC = () => {
 }
 
 export default Home
+
+
+
+/**
+  * @author - Nguyen Thai Duc
+  * @course -  F8
+*/

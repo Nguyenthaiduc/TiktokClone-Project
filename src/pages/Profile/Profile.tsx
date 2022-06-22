@@ -7,3 +7,14 @@ const Profile : React.FC = () => {
 }
 
 export default Profile
+
+
+
+
+
+
+
+/**
+  * @author - Nguyen Thai Duc
+  * @course -  F8
+*/

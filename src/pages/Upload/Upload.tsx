@@ -7,3 +7,11 @@ const Upload : React.FC = () => {
 }
 
 export default Upload
+
+
+
+
+/**
+  * @author - Nguyen Thai Duc
+  * @course -  F8
+*/
