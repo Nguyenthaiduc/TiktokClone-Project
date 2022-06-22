@@ -37,7 +37,7 @@ setTimeout(()=> {
 ```
 ### Structure Tree
 ```
-.
+root
 .
 └── src
      ├── assets

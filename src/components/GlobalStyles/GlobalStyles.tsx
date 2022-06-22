@@ -1,4 +1,4 @@
-import { PropsWithChildren} from 'react';
+import { PropsWithChildren } from 'react';
 import './GlobalStyles.scss';
 
 interface Props extends PropsWithChildren<unknown>{   }

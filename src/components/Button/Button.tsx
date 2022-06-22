@@ -1,7 +1,7 @@
 import React, { ForwardRefExoticComponent, RefAttributes } from 'react';
+import { Link, LinkProps } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
-import { Link, LinkProps } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
