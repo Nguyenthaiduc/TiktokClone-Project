@@ -21,7 +21,7 @@ type Props = {
     leftIcon?: React.ReactElement;
     rightIcon?: React.ReactElement;
 }
-type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string
+type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string;
 
 const Button = ({
     to,

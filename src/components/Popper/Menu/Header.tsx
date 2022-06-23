@@ -10,7 +10,7 @@ type Props = {
     onBack?: () => void
 }
 // Remove React.FC from Typescript template
-const Header = ({title, onBack}: Props): JSX.Element => {
+const Header = ({ title, onBack }: Props): JSX.Element => {
 
     return (
         <header className={cx('header')}>
