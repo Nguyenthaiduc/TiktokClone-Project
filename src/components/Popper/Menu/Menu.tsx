@@ -38,7 +38,7 @@ const defaultFn = () => {};
 // Remove React.FC from Typescript template
 const Menu = ({ children, items = [],hideOnClick = false, onChange = defaultFn }: Props): JSX.Element => {
     //state
-    const [history, setHistory] = useState([{ data: items } ]);
+    const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
     const renderItems = () => {
