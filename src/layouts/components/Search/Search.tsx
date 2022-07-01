@@ -1,17 +1,18 @@
 import React, { useEffect, useState,useRef } from 'react';
-import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import HeadlessTipply from '@tippyjs/react/headless';
-import { Wrapper as PopperWrapper } from '@/components/Popper';
+import {CircleX, Loading, SearchIcon} from '@/components/Icons';
 import AccountItem from '@/components/AccountItem';
+import { Wrapper as PopperWrapper } from '@/components/Popper';
+
+import * as searchServices from '@/services/searchService';
 import className from 'classnames/bind';
 import styles from './Search.module.scss';
-import * as searchServices from '@/services/searchService';
 
-import {CircleX, Loading, SearchIcon} from '@/components/Icons';
+import { faCircleXmark, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { DataApi,Data } from '@/types';
-import { useDebounce } from '@/hooks'
+import { useDebounce } from '@/hooks';
 
 const cx = className.bind(styles);
 
@@ -21,17 +22,17 @@ const Search:React.FC = () => {
     //STATE
     const [searchValue,setSearchValue] = useState<string>('')
     const [searchResult, setSearchResult] = useState<Array<DataApi>>([]);
-    const [showResult,setShowResult] = useState<boolean>(false)
-    const [loading,setLoading] = useState<boolean>(false)
+    const [showResult,setShowResult] = useState<boolean>(false);
+    const [loading,setLoading] = useState<boolean>(false);
 
     //Khi người dùng gõ nếu dừng lại 500 mili giây thì mới bắt đầu tìm kiếm
     //1:
     //2 'h'
     //3 ''
-    const debouncedValue = useDebounce(searchValue,500)
+    const debouncedValue = useDebounce(searchValue,500);
     
-
-    const inputRef = useRef<HTMLInputElement>(null)
+    // useRef
+    const inputRef = useRef<HTMLInputElement>(null);
       //useEffect
       useEffect(() => {
           //check space

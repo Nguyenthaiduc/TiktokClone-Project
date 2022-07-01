@@ -1,5 +1,5 @@
-import Tippy from '@tippyjs/react/headless';
 import React, { PropsWithChildren, useState } from 'react';
+import Tippy from '@tippyjs/react/headless';
 
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
@@ -12,7 +12,7 @@ const cx = classNames.bind(styles);
 
 
 export type MenuItems = {
-    
+
         icon: React.ReactElement;
         title: string;
         type?: string;

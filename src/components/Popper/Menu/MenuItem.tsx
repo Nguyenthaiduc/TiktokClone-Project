@@ -12,8 +12,8 @@ type Props = {
         icon: React.ReactElement;
         title: string;
         type?:string;
-        to?: string | undefined;
-        separate?: boolean | undefined;
+        to?: string;
+        separate?: boolean;
     },
     onClick : () => void
 }

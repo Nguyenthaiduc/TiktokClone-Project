@@ -1,11 +1,11 @@
-import React, { ForwardRefExoticComponent, RefAttributes } from 'react';
+import React, { ForwardRefExoticComponent, PropsWithChildren, RefAttributes } from 'react';
 import { Link, LinkProps } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props extends PropsWithChildren<unknown> {
     to?: string;
     href?: string;
     primary?: string | boolean;
@@ -15,7 +15,6 @@ type Props = {
     text?: string | boolean;
     rounded?: string | boolean;
     disabled?: string | boolean;
-    children?: React.ReactNode;
     onClick?: () => void;
     className?: string | boolean | symbol | any;
     leftIcon?: React.ReactElement;
