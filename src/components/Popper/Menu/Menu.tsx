@@ -29,8 +29,8 @@ interface Props extends PropsWithChildren<unknown> {
 
 type RenderResult = {
     'data-placement': Placement;
-    'data-reference-hidden'?: string | undefined;
-    'data-escaped'?: string | undefined;
+    'data-reference-hidden'?: string;
+    'data-escaped'?: string;
 }
 
 

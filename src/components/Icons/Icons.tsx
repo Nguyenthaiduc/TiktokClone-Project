@@ -1,11 +1,11 @@
 import React from 'react';
-interface PropTypes {
+interface Props {
     className?: string;
     width?: number;
     height?: number;
 }
 //upload
-export const UploadIcon: React.FC<PropTypes> = ({ className, width = '3.2rem', height = '3.2rem' }) => {
+export const UploadIcon: React.FC<Props> = ({ className, width = '3.2rem', height = '3.2rem' }) => {
     return (
         <svg
             className={className}
@@ -24,7 +24,7 @@ export const UploadIcon: React.FC<PropTypes> = ({ className, width = '3.2rem', h
     );
 };
 //message
-export const MessageIcon: React.FC<PropTypes> = ({ className, width = '2.6rem', height = '2.6rem' }) => {
+export const MessageIcon: React.FC<Props> = ({ className, width = '2.6rem', height = '2.6rem' }) => {
     return (
         <svg
             className={className}
@@ -43,7 +43,7 @@ export const MessageIcon: React.FC<PropTypes> = ({ className, width = '2.6rem', 
     );
 };
 //inbox
-export const InboxIcon: React.FC<PropTypes> = ({ className, width = '3.2rem', height = '3.2rem' }) => {
+export const InboxIcon: React.FC<Props> = ({ className, width = '3.2rem', height = '3.2rem' }) => {
     return (
         <svg
             className={className}
@@ -62,7 +62,7 @@ export const InboxIcon: React.FC<PropTypes> = ({ className, width = '3.2rem', he
     );
 };
 //check
-export const CheckIcon: React.FC<PropTypes> = ({ className, width = '1.4rem', height = '1.4rem' }) => {
+export const CheckIcon: React.FC<Props> = ({ className, width = '1.4rem', height = '1.4rem' }) => {
     return (
         <svg
             className={className}
@@ -83,7 +83,7 @@ export const CheckIcon: React.FC<PropTypes> = ({ className, width = '1.4rem', he
     );
 };
 //back
-export const BackIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const BackIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -102,7 +102,7 @@ export const BackIcon: React.FC<PropTypes> = ({ className, width = '2rem', heigh
     );
 };
 //user
-export const UserIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const UserIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -121,7 +121,7 @@ export const UserIcon: React.FC<PropTypes> = ({ className, width = '2rem', heigh
     );
 };
 //coin
-export const CoinIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const CoinIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -145,7 +145,7 @@ export const CoinIcon: React.FC<PropTypes> = ({ className, width = '2rem', heigh
     );
 };
 //feedback
-export const FeedbackIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const FeedbackIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -164,7 +164,7 @@ export const FeedbackIcon: React.FC<PropTypes> = ({ className, width = '2rem', h
     );
 };
 //language
-export const LanguageIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const LanguageIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -183,7 +183,7 @@ export const LanguageIcon: React.FC<PropTypes> = ({ className, width = '2rem', h
     );
 };
 //Settng
-export const SettingIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const SettingIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -202,7 +202,7 @@ export const SettingIcon: React.FC<PropTypes> = ({ className, width = '2rem', he
     );
 };
 //keyboard
-export const KeyboardIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const KeyboardIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -221,7 +221,7 @@ export const KeyboardIcon: React.FC<PropTypes> = ({ className, width = '2rem', h
     );
 };
 //logout
-export const LogoutIcon: React.FC<PropTypes> = ({ className, width = '2rem', height = '2rem' }) => {
+export const LogoutIcon: React.FC<Props> = ({ className, width = '2rem', height = '2rem' }) => {
     return (
         <svg
             className={className}
@@ -240,7 +240,7 @@ export const LogoutIcon: React.FC<PropTypes> = ({ className, width = '2rem', hei
     );
 };
 //search
-export const SearchIcon: React.FC<PropTypes> = ({ className, width = '2.4rem', height = '2.4rem' }) => {
+export const SearchIcon: React.FC<Props> = ({ className, width = '2.4rem', height = '2.4rem' }) => {
     return (
         <svg
             className={className}
@@ -259,7 +259,7 @@ export const SearchIcon: React.FC<PropTypes> = ({ className, width = '2.4rem', h
     );
 };
 //loading
-export const Loading: React.FC<PropTypes> = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+export const Loading: React.FC<Props> = ({ className, width = '1.6rem', height = '1.6rem' }) => {
     return (
         <svg
             className={className}
@@ -279,7 +279,7 @@ export const Loading: React.FC<PropTypes> = ({ className, width = '1.6rem', heig
     );
 };
 //CircleX
-export const CircleX: React.FC<PropTypes> = ({ className, width = '1.6rem', height = '1.6rem' }) => {
+export const CircleX: React.FC<Props> = ({ className, width = '1.6rem', height = '1.6rem' }) => {
     return (
         <svg
             className={className}
@@ -299,7 +299,7 @@ export const CircleX: React.FC<PropTypes> = ({ className, width = '1.6rem', heig
     );
 };
 // HomeIcon
-export const HomeIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2rem', className }) => (
+export const HomeIcon: React.FC<Props> = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -316,7 +316,7 @@ export const HomeIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2r
     </svg>
 );
 // HomeActiveIcon
-export const HomeActiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2rem', className }) => (
+export const HomeActiveIcon: React.FC<Props> = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -333,7 +333,7 @@ export const HomeActiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', height =
     </svg>
 );
 // UserGroupIcon
-export const UserGroupIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2rem', className }) => (
+export const UserGroupIcon: React.FC<Props> = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -360,7 +360,7 @@ export const UserGroupIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = 
     </svg>
 );
 // UserGroupActionIcon
-export const UserGroupActiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2rem', className }) => (
+export const UserGroupActiveIcon: React.FC<Props> = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -376,7 +376,7 @@ export const UserGroupActiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', hei
     </svg>
 );
 // LiveIcon
-export const LiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2rem', className }) => (
+export const LiveIcon: React.FC<Props> = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}
@@ -394,7 +394,7 @@ export const LiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2r
     </svg>
 );
 // LiveActionIcon
-export const LiveActiveIcon: React.FC<PropTypes> = ({ width = '3.2rem', height = '3.2rem', className }) => (
+export const LiveActiveIcon: React.FC<Props> = ({ width = '3.2rem', height = '3.2rem', className }) => (
     <svg
         className={className}
         width={width}

@@ -1,0 +1,7 @@
+{
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
+      "pre-commit": "echo 'some message' && npm run doc && git add README.md && lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  }
