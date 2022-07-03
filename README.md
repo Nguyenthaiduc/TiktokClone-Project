@@ -126,3 +126,11 @@ root
 
       │   ├──  └──
 ```
+### Git 
+```
+$ ╰─❯ npx git-cz --allow-empty
+```
+### Docker
+```
+$ docker run -d -p 3000:3000 vite
+```

@@ -1,8 +1,8 @@
 import React from 'react';
 interface Props {
     className?: string;
-    width?: number;
-    height?: number;
+    width?: number | string;
+    height?: number | string;
 }
 //upload
 export const UploadIcon: React.FC<Props> = ({ className, width = '3.2rem', height = '3.2rem' }) => {

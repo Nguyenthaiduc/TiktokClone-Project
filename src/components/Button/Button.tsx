@@ -14,7 +14,7 @@ interface Props extends PropsWithChildren<unknown> {
     large?: boolean;
     text?: boolean;
     rounded?: boolean;
-    disabled?: string | boolean;
+    disabled?: boolean;
     onClick?: () => void;
     className?: string | boolean | symbol | any;
     leftIcon?: React.ReactElement;
