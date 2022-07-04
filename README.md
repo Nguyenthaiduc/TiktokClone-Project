@@ -128,7 +128,7 @@ root
 ```
 ### Git 
 ```
-$ ╰─❯ npx git-cz --allow-empty
+$ npx git-cz --allow-empty
 ```
 ### Docker
 ```
