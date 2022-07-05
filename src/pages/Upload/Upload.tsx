@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Upload : React.FC = () => {
-  return (
-    <div>Upload</div>
-  )
+class Upload extends React.Component {
+  render() {
+    return (
+      <div>Upload</div>
+    )
+  }
 }
 
 export default Upload

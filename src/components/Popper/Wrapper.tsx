@@ -1,4 +1,4 @@
-import { PropsWithChildren } from 'react';
+import { Component, PropsWithChildren } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Popper.module.scss';
 
@@ -8,12 +8,13 @@ interface Props extends PropsWithChildren<unknown>{
 
 const cx = classNames.bind(styles)
 // Remove React.FC from Typescript template
-const Wrapper = ({ children,className }: Props): JSX.Element => {
-  return (
-    <div className={cx('wrapper',className)}>
-        {children}
+class Wrapper extends Component<Props> {
+  render() {
+    return(
+      <div className={cx('wrapper',this.props.className)}>
+        {this.props.children}
     </div>
-  )
+    )
+  }
 }
-
 export default Wrapper

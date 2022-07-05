@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Live: React.FC = () => {
-  return (
-    <h1>Live</h1>
-  )
+class Live extends React.Component {
+  render() {
+    return (
+      <h1>Live</h1>
+    )
+  }
 }
 
 export default Live

@@ -1,9 +1,10 @@
 import React from 'react'
-
-const Following : React.FC = () => {
-  return (
-    <h1>Following</h1>
-  )
+class Following extends React.Component {
+  render() {
+    return (
+      <h1>Following</h1>
+    )
+  }
 }
 
 export default Following

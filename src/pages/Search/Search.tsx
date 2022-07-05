@@ -1,18 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-const Search : React.FC = () => {
-  return (
-    <div>Search</div>
-  )
+class Search extends React.Component {
+    render() {
+        return <div>Search</div>;
+    }
 }
-
-export default Search
-
-
-
-
+export default Search;
 
 /**
-  * @author - Nguyen Thai Duc
-  * @course -  F8
-*/
+ * @author - Nguyen Thai Duc
+ * @course -  F8
+ */
