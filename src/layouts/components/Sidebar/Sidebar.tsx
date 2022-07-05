@@ -25,7 +25,7 @@ const Sidebar: React.FC = () => {
                     icon={<UserGroupIcon />}
                     activeIcon={<UserGroupActiveIcon />}
                 />
-                <MenuItem title="For You" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
+                <MenuItem title="LIVE" to={config.routes.live} icon={<LiveIcon />} activeIcon={<LiveActiveIcon />} />
             </Menu>
         </aside>
     );
