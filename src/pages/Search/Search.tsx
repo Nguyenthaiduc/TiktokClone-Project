@@ -7,3 +7,12 @@ const Search : React.FC = () => {
 }
 
 export default Search
+
+
+
+
+
+/**
+  * @author - Nguyen Thai Duc
+  * @course -  F8
+*/

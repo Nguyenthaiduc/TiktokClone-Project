@@ -1,4 +1,4 @@
-import { Key } from "react"
+import { Key } from "react";
 
 export interface DataApi {
     id: Key | null | undefined

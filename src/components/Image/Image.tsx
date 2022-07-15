@@ -3,12 +3,12 @@ import { images } from '@/assets/images';
 import classNames from 'classnames';
 import styles from './Image.module.scss';
 
-interface PropTypes extends React.ComponentPropsWithoutRef<'img'> {
+interface Props extends React.ComponentPropsWithoutRef<'img'> {
     fallback?: string
 }
 export type Ref = HTMLImageElement;
 
-const Image: React.FC<PropTypes> = forwardRef<Ref, PropTypes>(({ src, alt, className,fallback: customFallBack=images.noImage, ...props }, ref) => {
+const Image = forwardRef<Ref, Props>(({ src, alt, className,fallback: customFallBack=images.noImage, ...props }: Props, ref) => {
     const [fallback, setFallback] = useState<string>('');
 
     const handleError = () => {

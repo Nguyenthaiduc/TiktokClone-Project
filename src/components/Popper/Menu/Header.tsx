@@ -1,5 +1,4 @@
 
-
 import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import { images } from '@/assets/images';
@@ -10,8 +9,8 @@ type Props = {
     title?: string
     onBack?: () => void
 }
-
-const Header = ({title, onBack}: Props): JSX.Element => {
+// Remove React.FC from Typescript template
+const Header = ({ title, onBack }: Props): JSX.Element => {
 
     return (
         <header className={cx('header')}>

@@ -1,27 +1,26 @@
-import React, { ForwardRefExoticComponent, RefAttributes } from 'react';
+import React, { ForwardRefExoticComponent, PropsWithChildren, RefAttributes } from 'react';
+import { Link, LinkProps } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Button.module.scss';
-import { Link, LinkProps } from 'react-router-dom';
 
 const cx = classNames.bind(styles);
 
-type Props = {
+interface Props extends PropsWithChildren<unknown> {
     to?: string;
     href?: string;
-    primary?: string | boolean;
-    outline?: string | boolean;
-    small?: string | boolean;
-    large?: string | boolean;
-    text?: string | boolean;
-    rounded?: string | boolean;
-    disabled?: string | boolean;
-    children?: React.ReactNode;
+    primary?: boolean;
+    outline?: boolean;
+    small?: boolean;
+    large?: boolean;
+    text?: boolean;
+    rounded?: boolean;
+    disabled?: boolean;
     onClick?: () => void;
     className?: string | boolean | symbol | any;
     leftIcon?: React.ReactElement;
     rightIcon?: React.ReactElement;
 }
-type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string
+type CompoType = ForwardRefExoticComponent<LinkProps & RefAttributes<HTMLAnchorElement>> | string;
 
 const Button = ({
     to,

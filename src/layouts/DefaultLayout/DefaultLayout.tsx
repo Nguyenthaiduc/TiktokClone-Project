@@ -4,7 +4,7 @@ import { PropsWithChildren } from 'react';
 import styles from './DefaultLayout.module.scss';
 import classNames from 'classnames/bind';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 interface Props extends PropsWithChildren<unknown> { 
 

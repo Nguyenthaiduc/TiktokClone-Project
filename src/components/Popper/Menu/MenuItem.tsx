@@ -12,13 +12,13 @@ type Props = {
         icon: React.ReactElement;
         title: string;
         type?:string;
-        to?: string | undefined;
-        separate?: boolean | undefined;
+        to?: string;
+        separate?: boolean;
     },
     onClick : () => void
 }
-
-const MenuItem  = ( {data,onClick }: Props): JSX.Element => {
+// Remove React.FC from Typescript template
+const MenuItem  = ({ data,onClick }: Props): JSX.Element => {
     const classes = cx('menu-item',{
         separate: data.separate,
     })

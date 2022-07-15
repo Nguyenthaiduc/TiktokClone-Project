@@ -1,0 +1,87 @@
+{
+    "env": {
+      "browser": true,
+      "es2021": true
+    },
+    "extends": [
+      "plugin:react-hooks/recommended",
+      "plugin:react/recommended",
+      "airbnb",
+      "plugin:@typescript-eslint/recommended",
+      "plugin:prettier/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 13,
+      "sourceType": "module"
+    },
+    "ignorePatterns": ["node_modules", "dist"],
+    "plugins": ["react", "import-helpers"],
+    "rules": {
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off",
+      "react/jsx-props-no-spreading": "off",
+      "react/jsx-filename-extension": [
+        "error",
+        { "extensions": [".jsx", "tsx"] }
+      ],
+      "jsx-a11y/label-has-associated-control": [
+        "error",
+        {
+          "assert": "htmlFor"
+        }
+      ],
+      "no-use-before-define": "off",
+      "@typescript-eslint/no-use-before-define": ["error"],
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": ["error"],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_.+[^_]$"
+        }
+      ],
+      "@typescript-eslint/naming-convention": [
+        "error",
+        {
+          "selector": "interface",
+          "format": ["PascalCase"],
+          "custom": {
+            "regex": "^I[A-Z]",
+            "match": true
+          }
+        }
+      ],
+      "import/prefer-default-export": "off",
+      "import/extensions": [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never",
+          "js": "never",
+          "jsx": "never"
+        }
+      ],
+      "import-helpers/order-imports": [
+        "warn",
+        {
+          "newlinesBetween": "always",
+          "groups": [
+            "module",
+            "absolute",
+            "/^@/(?!.*assets).*/",
+            "/^@/assets/",
+            ["parent", "sibling", "index"]
+          ],
+          "alphabetize": { "order": "asc", "ignoreCase": true }
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": "typescript"
+    }
+  }

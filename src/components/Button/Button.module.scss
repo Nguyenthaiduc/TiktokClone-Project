@@ -14,7 +14,7 @@
     user-select: none; /*khong chọn duoc text */
 
     + .wrapper{
-        margin-left:8px; /* Tạo khoảng cách giữa các nút*/
+        margin-left: 8px; /* Tạo khoảng cách giữa các nút*/
 
     &.disabled {
         pointer-events: none;
@@ -35,7 +35,7 @@
 
 // Button Types
 .rounded {
-    border-radius :999px;
+    border-radius: 999px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 0.06);
     border-color: rgba(22,24,35,0.12);
 
