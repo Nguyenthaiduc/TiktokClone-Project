@@ -12,7 +12,7 @@ export const search = async (q : string,type = 'less') => {
         
     } catch (err) {
         
-        throw new Error("Failed fetchApi Search !")
+        throw new Error("Failed fetchApi Search !"+ err);
     }
 
 };

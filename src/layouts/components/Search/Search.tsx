@@ -18,7 +18,7 @@ const cx = className.bind(styles);
 
 
 
-const Search:React.FC = () => {
+const Search: React.FC = () => {
     //STATE
     const [searchValue,setSearchValue] = useState<string>('')
     const [searchResult, setSearchResult] = useState<Array<DataApi>>([]);

@@ -3,7 +3,6 @@ import { Key } from "react";
 export interface DataApi {
     id: Key | null | undefined
   
-    
     data : [
         {
         id : number,
