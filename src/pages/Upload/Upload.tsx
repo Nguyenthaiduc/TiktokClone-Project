@@ -1,12 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-const Upload : React.FC = () => {
+const Upload: React.FC = () => {
   return (
     <div>Upload</div>
   )
 }
 
-export default Upload
+export default Upload;
 
 
 

@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-const Home : React.FC = () => {
+const Home: React.FC = () => {
   return (
     <h1 style={{ height: '2000px'}}>
         Home
@@ -8,8 +8,7 @@ const Home : React.FC = () => {
   )
 }
 
-export default Home
-
+export default Home;
 
 
 /**

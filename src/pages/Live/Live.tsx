@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 const Live: React.FC = () => {
   return (
@@ -6,7 +6,7 @@ const Live: React.FC = () => {
   )
 }
 
-export default Live
+export default Live;
 
 
 
