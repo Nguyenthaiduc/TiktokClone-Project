@@ -38,6 +38,18 @@
     font-weight: 700;
 }
 
+@font-face {
+    font-family: SofiaPro;
+    src: url('/src/assets/fonts/sofiapro-semibold.otf');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: SofiaPro;
+    src: url('/src/assets/fonts/sofiapro-regular.woff');
+    font-weight: 400;
+}
+
 html {
     font-size: 62.5%;
 }
