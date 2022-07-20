@@ -28,7 +28,11 @@ $ npm install
 $ npm run dev
 $ npm run build
 ```
-
+**Using Make**
+```bash
+$ make dev
+$ make build
+```
 ### Debugger
 ```js
 setTimeout(()=> {
