@@ -24,7 +24,7 @@ interface Props extends PropsWithChildren<unknown> {
     items: MenuItems[];
     onChange?: (menuItem: MenuItems) => void;
     hideOnClick?: boolean;
-    children?: React.ReactElement
+    children?: React.ReactElement;
 }
 
 type RenderResult = {

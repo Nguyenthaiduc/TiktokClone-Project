@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Popper.module.scss';
 
 interface Props extends PropsWithChildren<unknown>{
-    className?:string
+    className?: string;
 }
 
 const cx = classNames.bind(styles)
@@ -16,4 +16,4 @@ const Wrapper = ({ children,className }: Props): JSX.Element => {
   )
 }
 
-export default Wrapper
+export default Wrapper;

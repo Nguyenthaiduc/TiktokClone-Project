@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import styles from './Image.module.scss';
 
 interface Props extends React.ComponentPropsWithoutRef<'img'> {
-    fallback?: string
+    fallback?: string;
 }
 export type Ref = HTMLImageElement;
 

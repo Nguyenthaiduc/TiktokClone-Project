@@ -3,11 +3,11 @@ import classNames from 'classnames/bind';
 import styles from './Menu.module.scss';
 import { images } from '@/assets/images';
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 
 type Props = {
-    title?: string
-    onBack?: () => void
+    title?: string;
+    onBack?: () => void;
 }
 // Remove React.FC from Typescript template
 const Header = ({ title, onBack }: Props): JSX.Element => {
@@ -25,4 +25,4 @@ const Header = ({ title, onBack }: Props): JSX.Element => {
 
 }
 
-export default Header
+export default Header;
