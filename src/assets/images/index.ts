@@ -16,6 +16,12 @@ import logout from './logout.svg';
 import noImage from './no-image.png';
 import loading from './loading.svg';
 import circleX from './circleX.svg';
+import home from './home.svg';
+import homeAcive from './homeActive.svg';
+import live from './live.svg';
+import liveActive from 'liveActive.svg';
+import userGroup from './userGroup.svg';
+import userGroupActive from './userGroupActive.svg';
 export const images = {
     logo,
     check,
@@ -35,4 +41,10 @@ export const images = {
     noImage,
     loading,
     circleX,
+    live,
+    home,
+    homeAcive,
+    userGroup,
+    userGroupActive,
+    liveActive,
 };
