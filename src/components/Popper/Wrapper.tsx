@@ -6,7 +6,7 @@ interface Props extends PropsWithChildren<unknown>{
     className?: string;
 }
 
-const cx = classNames.bind(styles)
+const cx = classNames.bind(styles);
 // Remove React.FC from Typescript template
 const Wrapper = ({ children,className }: Props): JSX.Element => {
   return (
