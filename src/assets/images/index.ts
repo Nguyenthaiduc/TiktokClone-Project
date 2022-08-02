@@ -19,7 +19,7 @@ import circleX from './circleX.svg';
 import home from './home.svg';
 import homeAcive from './homeActive.svg';
 import live from './live.svg';
-import liveActive from 'liveActive.svg';
+import liveActive from './liveActive.svg';
 import userGroup from './userGroup.svg';
 import userGroupActive from './userGroupActive.svg';
 export const images = {
